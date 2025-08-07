@@ -79,8 +79,7 @@ print("[INFO] Initializing EasyOCR...")
 reader = Reader(['en'], gpu=True)
 
 # Image Input Setup
-#image_folder = r'C:\Users\Abrar Khan\Downloads\archive (1)\images'
-image_folder = r'C:\Users\Abrar Khan\Downloads\archive\train_val_images\train_images'
+image_folder = r'IMAGE_FOLDER_GOES_HERE'
 
 # Finds all images
 image_paths = glob(os.path.join(image_folder, '*.png')) + \
@@ -93,9 +92,8 @@ if not image_paths:
     exit()
 
 # Image Selection
-#selected_images = random.sample(image_paths, min(2, len(image_paths)))
-selected_images = [r'C:\Users\Abrar Khan\Downloads\test1.png']
-#selected_images = [r'C:\Users\Abrar Khan\Pictures\CSE6367FP\Figure_10.png']
+selected_images = random.sample(image_paths, min(2, len(image_paths)))
+#selected_images = [r'SINGLE_IMAGE_CAN_GO_HERE']
 
 # Begin Main Loop of Program
 for image_path in selected_images:
@@ -190,3 +188,4 @@ for image_path in selected_images:
 
     # Show Final Output
     show_image("Final Annotated Image", annotated_image)
+
